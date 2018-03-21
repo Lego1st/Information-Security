@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Extended Euclid </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <table style="width:100%">
+            {% for row in table: %}
+            <tr>
+                {% for col in row: %}
+                    <th> {{ col }} </th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <style>
+
+        </style>
+    </body>
+</html>
