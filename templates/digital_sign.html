@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Encryption </title>
+        <title> Digital Signature </title>
     </head>
     <body>
         <p>
-            <!--
+            
             {% if encrypt == 'RSA' %}
+                A - - - - > B <br>
                 n = p * q <br>
                 euler = (p-1) * (q-1) <br>
                 d = e^-1 mod euler <br>
-                e(e, n) = y = x ^ e mod n <br>
-                d(d, n) = _x = y ^ d mod n <br>
+                e(eb, nb) = y = x ^ eb % nb <br>
+                d(db, nb) = _x = y ^ db % nb <br>
+                sign(da, na) = y_sign = x ^ da % na
+                ver(ea, na): y_sign ^ ea % na = x % na
             {% else %}
                 beta = alpha ^ a % p<br>
                 e(x, k) = (y1, y2)<br>
                 y1 =  alpha ^ k % p <br>
                 y2 = (x * beta ^ k) % p <br>
                 d(y1, y2) = y2 * y1 ^ (p-1-a) % p <br> 
+                <br>
+                sign(gamma, delta)<br>
+                gamma = alpha ^ k % p<br>
+                delta = (x - a * gamma) * k^-1 % (p-1)<br>
+                ver()
+                beta ^ gamma * gamma ^ delta % p == alpha ^ x % p
             {% endif %}
-            -->
+           
             <br><br>
             {% for key, val in data: %}
                 {{ key }} : {{ val }} <br>
