@@ -17,11 +17,14 @@ class RSA():
 		return self.y_sign
 
 	def mess_decryt(self):
-		return power(self.y, self.db, self.nb)[0] 
+		self._x = power(self.y, self.db, self.nb)[0] 
+		return self._x 
 
 	def ver(self):
 		one = power(self.y_sign, self.ea, self.na)[0]
 		two = self.x % self.na
+		self.one = one
+		self.two = two
 		return one == two, one, two
 
 class ElGamal():
@@ -41,8 +44,10 @@ class ElGamal():
 		return self.gamma, self.delta
 
 	def ver(self):
-		one = (power(self.beta, self.gamma, self.p, self.debug)[0] * power(self.gamma, self.delta, self.p, self.debug))[0] % self.p
+		one = (power(self.beta, self.gamma, self.p, self.debug)[0] * power(self.gamma, self.delta, self.p, self.debug)[0]) % self.p
 		two = power(self.alpha, self.x, self.p, self.debug)[0]
+		self.one = one
+		self.two = two
 		return one == two, one, two
 
 class DSS():

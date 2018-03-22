@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Encryption </title>
+    </head>
+    <body>
+        <p>
+            {% if encrypt == 'RSA' %}
+                n = p * q <br>
+                euler = (p-1) * (q-1) <br>
+                d = e^-1 mod euler <br>
+                e(e, n) = y = x ^ e mod n <br>
+                d(d, n) = _x = y ^ d mod n <br>
+            {% else %}
+                beta = alpha ^ a % p<br>
+                e(x, k) = (y1, y2)<br>
+                y1 =  alpha ^ k % p <br>
+                y2 = (x * beta ^ k) % p <br>
+                d(y1, y2) = y2 * y1 ^ (p-1-a) % p <br> 
+            {% endif %}
+
+            <br><br>
+            {% for key, val in data: %}
+                {{ key }} : {{ val }} <br>
+            {% endfor %}
+        </p>
+    </body>
+</html>

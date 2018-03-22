@@ -13,7 +13,7 @@
     <body>
         <ul>
         <li><a href="#"> Power </a></li>
-        <form action="/eeuclid" method="POST">
+        <form action="/power" method="POST">
             <input type="text" name="a"> a<br>
             <input type="text" name="b"> b<br>
             <input type="text" name="m"> m<br> 
@@ -28,7 +28,7 @@
             <input type="submit" value="Submit">
         </form>
         <li><a href="#"> Elgamal </a></li>
-        <form action="#">
+        <form action="/elgamal" method="POST">
             <input type="text" name="p"> p <br>
             <input type="text" name="alpha"> alpha <br> 
             <input type="text" name="a"> a <br>
@@ -37,7 +37,7 @@
             <input type="submit" value="Submit">
         </form>
         <li><a href="#"> RSA Singature </a></li>
-        <form>
+        <form action="/rsa_sign" method="POST">
             <input type="text" name="pa"> pa <br> 
             <input type="text" name="qa"> qa <br>
             <input type="text" name="ea"> ea <br>
@@ -48,8 +48,13 @@
             <input type="submit" value="Submit">
         </form>
         <li><a href="#"> Elgamal Signature </a></li>
-        <form>
-
+        <form action="/elgamal_sign" method="POST">
+            <input type="text" name="p"> p <br> 
+            <input type="text" name="alpha"> alpha <br>
+            <input type="text" name="a"> a <br>
+            <input type="text" name="k"> k <br> 
+            <input type="text" name="x"> x <br>
+            <input type="submit" value="Submit">
         </form>
         <li><a href="#"> DSS </a></li>
         <form>

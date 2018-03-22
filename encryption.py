@@ -22,12 +22,13 @@ class ElGamal():
         self.beta = power(alpha, a, p)[0]
 
     def encrypt(self, x, k):
+        self.k = k
         self.y1 = power(self.alpha, k, self.p)[0]
-        self.y2 = (x * power(self.beta, k, self.p))[0]  % self.p
+        self.y2 = (x * power(self.beta, k, self.p)[0])  % self.p
         return self.y1, self.y2
 
     def decrypt(self, y):
-        return (self.y2 * power(self.y1, self.p-1-self.a, self.p))[0] % self.p
+        return (self.y2 * power(self.y1, self.p-1-self.a, self.p)[0]) % self.p
 
 if __name__ == "__main__":
     if sys.argv[1] == '0':
